@@ -13,7 +13,6 @@ const initWeb3 = () => {
                 let provider = new ethers.providers.Web3Provider(window.ethereum)
                 let signer = provider.getSigner()
                 const rpcProvider = new ethers.providers.JsonRpcProvider()
-                debugger
                 let con = {provider,signer}
                   resolve(con)
               })

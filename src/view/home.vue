@@ -17,7 +17,6 @@
             <p>The metaverse is the next evolution of social connection. <br>3D spaces in the metaverse will let you socialize, learn, <br>collaborate and play in ways that go beyond what we can <br>imagine.Zuck's vision is to help bring the metaverse to life.</p>
           </div>
         </div>
-        
       </div>
       <div class="btmCon">
         <img src="../assets/bg2.png" class="btmbg">
@@ -66,6 +65,9 @@
           </div>
         </div>
       </div>
+    </div>
+    <div class="homeContainerMob">
+
     </div>
     <Footer></Footer>
   </div>
@@ -122,6 +124,9 @@ export default {
   width: 100%;
   
   min-height:100vh;
+  .homeContainerMob{
+    display:none;
+  }
   .homeContainer{
     .basicPanel{
       width:1200px;
@@ -336,6 +341,16 @@ export default {
         }
       }
     }
+}
+@media screen and (max-width:900px){
+  .container{
+    .homeContainer{
+      display:none;
+    }
+    .homeContainerMob{
+      display:block;
+    }
+  }
 }
 </style>
 <style >

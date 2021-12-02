@@ -11,10 +11,14 @@
             <a class="menu" @click="toLink(6)">Marketplace</a>
             <a class="menu" @click="toLink(7)">My Collection</a>
         </div>
+        <div class="wallet">
+          <img src="../assets/more.png" >
+          {{defaultAddress}}
+        </div>
     </div>
     <div class="mobHeader">
       <div class="nav_merge">
-          <img class="merge_img" src="../assets/mergeico.png" @click="drawer = true" alt="">
+          <img class="merge_img" src="../assets/more.png" @click="drawer = true" alt="">
         </div>
         <el-drawer title="我是标题" v-model="drawer" :show-close="false" custom-class="drawer_body" :with-header="false" @click="tolerPop=false">  
           <i class="closeico" @click="drawer = false"></i>
@@ -86,31 +90,6 @@ export default {
         that.isLogin = true
       })
     },
-      toLink(i){
-          localStorage.setItem('active',i)
-          this.active = i
-          if(i==0){
-              this.$router.push('/')
-          }else if(i==1){
-              this.$router.push('/')
-              this.$emit('toGame')
-          }else if(i==2){
-              this.$router.push('/')
-              this.$emit('toNews')
-          }else if(i==3){
-              this.$router.push('/portalA')
-          }else if(i==4){
-              this.$router.push('/')
-              this.$emit('toToken')
-          }else if(i==6){
-              this.$router.push('/')
-              this.$emit('toMap')
-          }else if(i==7){
-              this.$router.push('/')
-              this.$emit('toContact')
-          }
-          this.drawer = false
-      },
     handleSetLanguage() {
       // 选择语言
       let lang = this.$i18n.locale
@@ -169,10 +148,19 @@ export default {
     left:0;
     right:0;
     z-index:9;
+    align-item:center;
+    .more{
+      display:none;
+    }
     .logo{
-        width:228px;
-        height:59px;
+        width:180px;
+        height:48px;
         margin-top:12px;
+    }
+    .wallet{
+      font-size:12px;
+      color:#fff;
+      line-height:88px;
     }
     .menus{
         display:flex;
@@ -239,11 +227,18 @@ export default {
     }
   }
     .header{
-        display:none;
-        height:40px;
+        height:54px;
         padding:0 15px;
+        background:#000000;
+        .more{
+          display:block;
+          width:33px;
+          height:33px;
+        }
         .logo{
-            width:190px;
+            width:119px;
+            height:38px;
+            margin-top:6px;
         }
         .menus{
             display:none;
