@@ -90,6 +90,31 @@ export default {
         that.isLogin = true
       })
     },
+      toLink(i){
+          localStorage.setItem('active',i)
+          this.active = i
+          if(i==0){
+              this.$router.push('/')
+          }else if(i==1){
+              this.$router.push('/')
+              this.$emit('toGame')
+          }else if(i==2){
+              this.$router.push('/')
+              this.$emit('toNews')
+          }else if(i==3){
+              this.$router.push('/portalA')
+          }else if(i==4){
+              this.$router.push('/MysteryBoxes')
+              this.$emit('toToken')
+          }else if(i==6){
+              this.$router.push('/ShowAll')
+              this.$emit('toMap')
+          }else if(i==7){
+              this.$router.push('/')
+              this.$emit('toContact')
+          }
+          this.drawer = false
+      },
     handleSetLanguage() {
       // 选择语言
       let lang = this.$i18n.locale
