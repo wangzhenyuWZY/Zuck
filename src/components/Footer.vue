@@ -10,15 +10,15 @@
                     </div>
                     <div class="linkitem">
                         <img src="../assets/linkimg2.png">
-                        <p>Telegram</p>
+                        <p>Twitter</p>
                     </div>
                     <div class="linkitem">
                         <img src="../assets/linkimg3.png">
-                        <p>Telegram</p>
+                        <p>Meta</p>
                     </div>
                     <div class="linkitem">
                         <img src="../assets/linkimg4.png">
-                        <p>Telegram</p>
+                        <p>Gitbooks</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +99,50 @@ export default {
 }
 @media screen and (max-width:900px) {
     .footer{
-        
+        .copy{
+           height:40px;
+           line-height:40px;
+           font-size: 12px;
+        }
+        .footopcon{
+            width:auto;
+            padding:0 10px 24px;
+            .right{
+                display:none;
+            }
+            .left{
+                width:100%;
+                h2{
+                    font-size:22px;
+                    color:#fff;
+                    line-height:30px;
+                    padding-top:25px;
+                    padding-bottom:20px;
+                }
+                .linklist{
+                    padding:0 20px;
+                    display:flex;
+                    justify-content: space-between;
+                    .linkitem{
+                        margin:0 ;
+                        img{
+                            width:40px;
+                            height:auto;
+                        }
+                        &:nth-child(2){
+                            img{
+                                margin:4px 0;
+                            }
+                        }
+                        &:nth-child(3){
+                            img{
+                                margin:6px 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
 }
 </style>

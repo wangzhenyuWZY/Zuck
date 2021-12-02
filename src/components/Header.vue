@@ -12,7 +12,7 @@
             <a class="menu" @click="toLink(7)">My Collection</a>
         </div>
         <div class="wallet">
-          <img src="../assets/more.png" >
+          <img src="../assets/bsc.jpg" >
           {{defaultAddress}}
         </div>
     </div>
@@ -24,13 +24,13 @@
           <i class="closeico" @click="drawer = false"></i>
           <ul class="drawer_nav">
             <li @click="toLink(0)"><a class="menu">Home</a></li>
-            <li @click="toLink(1)"><a class="menu">Game Trailer</a></li>
-            <li @click="toLink(2)"><a class="menu">News</a></li>
-            <li @click="toLink(3)"><a class="menu">NFT Portal</a></li>
-            <li @click="toLink(4)"><a class="menu">Tokenomics</a></li>
+            <li @click="toLink(1)"><a class="menu">Tokenomics</a></li>
+            <li @click="toLink(2)"><a class="menu">RoadMap</a></li>
+            <li @click="toLink(3)"><a class="menu">Community</a></li>
+            <li @click="toLink(4)"><a class="menu">Mystery Boxes</a></li>
             <!-- <li @click="toLink(5)"><a class="menu">IDO</a></li> -->
-            <li @click="toLink(6)"><a class="menu">Roadmap</a></li>
-            <li @click="toLink(7)"><a class="menu">Contact</a></li>
+            <li @click="toLink(6)"><a class="menu">Marketplace</a></li>
+            <li @click="toLink(7)"><a class="menu">My Collection</a></li>
           </ul>
         </el-drawer>
     </div>    
@@ -161,6 +161,11 @@ export default {
       font-size:12px;
       color:#fff;
       line-height:88px;
+      img{
+        width:30px;
+        height:30px;
+        border-radius:50%;
+      }
     }
     .menus{
         display:flex;
@@ -304,7 +309,7 @@ export default {
     border-bottom:1px solid #363636;
     a{
         display:block;
-        color:#ADADAD;
+        color:#fff;
         text-align:left;
         padding-left:33px;
         font-family: TimesNewRomanPS-BoldMT, TimesNewRomanPS;
