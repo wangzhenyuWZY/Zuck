@@ -100,10 +100,10 @@ export default {
           }else if(i==3){
               this.$router.push('/portalA')
           }else if(i==4){
-              this.$router.push('/')
+              this.$router.push('/MysteryBoxes')
               this.$emit('toToken')
           }else if(i==6){
-              this.$router.push('/')
+              this.$router.push('/ShowAll')
               this.$emit('toMap')
           }else if(i==7){
               this.$router.push('/')
