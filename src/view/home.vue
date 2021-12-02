@@ -258,6 +258,85 @@ export default {
     }
   }
 }
+@media screen and (max-width:1600px) {
+    .container{
+      .homeContainer {
+        .banners{
+          top:465px;
+        }
+        .btmCon{
+          .basicPanel{
+            .btn4{
+              width:360px;
+              margin-top:40px;
+              margin-bottom:30px;
+            }
+            .btn5{
+              width:380px;
+            }
+            .simply{
+              font-size:24px;
+              line-height:34px;
+              margin-bottom:60px;
+            }
+            .btn6{
+              width:300px;
+              display:block;
+              margin:0 auto;
+            }
+            .btn7{
+              width:890px;
+            }
+            .swap{
+              padding-top:60px;
+              .swapTop{
+                .btn8{
+                  width:380px;
+                }
+                .wapinfo{
+                  padding-top:60px;
+                  img{
+                    width:200px;
+                  }
+                  p{
+                    font-size:24px;
+                  }
+                }
+                .btn11{
+                  width:480px;
+                }
+              }
+            }
+            .zuckmeta{
+              .btn12{
+                margin-top:80px;
+                width:460px;
+                margin-bottom:60px;
+              }
+              .btn13{
+                width:980px;
+              }
+              .btn14{
+                margin-top:40px;
+                margin-bottom:30px;
+                width:300px;
+              }
+              .zucktoken{
+                font-size:16px;
+              }
+              .partner{
+                width:800px;
+                margin:30px auto 0;
+                img{
+                  width:180px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}
 </style>
 <style >
   .el-drawer,.drawer_body {

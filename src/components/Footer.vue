@@ -2,11 +2,31 @@
     <div class="footer">
         <div class="footopcon">
             <div class="left">
+                <h2>Community Call.</h2>
+                <div class="linklist">
+                    <div class="linkitem">
+                        <img src="../assets/linkimg1.png">
+                        <p>Telegram</p>
+                    </div>
+                    <div class="linkitem">
+                        <img src="../assets/linkimg2.png">
+                        <p>Telegram</p>
+                    </div>
+                    <div class="linkitem">
+                        <img src="../assets/linkimg3.png">
+                        <p>Telegram</p>
+                    </div>
+                    <div class="linkitem">
+                        <img src="../assets/linkimg4.png">
+                        <p>Telegram</p>
+                    </div>
+                </div>
             </div>
             <div class="right">
+                <img src="../assets/foot1.png">
             </div>
         </div>
-        <p>© Copyright 2021 ZUCKMETA </p>
+        <p class="copy">© Copyright 2021 ZUCKMETA </p>
     </div>
 </template>
 <script>
@@ -39,7 +59,42 @@ export default {
    .footopcon{
        width:1100px;
        margin:0 auto;
-
+       display:flex;
+       justify-content:space-between;
+       padding:30px 0;
+       .left{
+           h2{
+               font-size:30px;
+               color:#fff;
+               line-height:100%;
+               text-align:left;
+           }
+           .linklist{
+               padding-top:26px;
+               display:flex;
+               justify-content:center;
+               align-item:center;
+               .linkitem{
+                   margin:0 20px;
+                   img{
+                       height:46px;
+                   }
+                   p{
+                       font-size:15px;
+                       color:#fff;
+                       line-height:100%;
+                       padding-top:10px;
+                   }
+               }
+           }
+       }
+   }
+   .copy{
+       background:#000000;
+        line-height:43px;
+        color:rgba(255,255,255,0.6);
+        height:43px;
+        font-size:14px;
    }
 }
 @media screen and (max-width:900px) {
