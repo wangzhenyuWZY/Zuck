@@ -257,9 +257,14 @@ export default {
     }
   }
     .header{
+      width:100%;
         height:54px;
         padding:0 15px;
         background:#000000;
+        box-sizing:border-box;
+        .wallet{
+          display:none;
+        }
         .more{
           display:block;
           width:33px;
