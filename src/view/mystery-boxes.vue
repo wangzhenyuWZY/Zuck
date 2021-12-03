@@ -2,12 +2,30 @@
     <div class="mystery-boxes">
         <Header />
         <div class="top-img">
-            <img class="min-img" src="../assets/myBox/min.png" alt="">
+            <!-- <img class="min-img" src="../assets/myBox/min.png" alt=""> -->
         </div>
         <div class="content">
             <div class="shop">
                 <div class="img-box">
-                    <img src="../assets/myBox/box_img1.png" alt="">
+                    <!-- <img src="../assets/myBox/box_img1.png" alt=""> -->
+                    <div class="swiper-box">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img class="" src="../assets/myBox/swiper1.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="" src="../assets/myBox/swiper2.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="" src="../assets/myBox/swiper3.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img class="" src="../assets/myBox/swiper4.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="img-desc">
                     <div class="sale">COUNTDOWN TO PUBLIC SALE <span class="soon">COMING SOON</span></div>
@@ -17,7 +35,24 @@
                         <br>MAX minted: 0 / 1,000
                     </div>
                     <div class="price">
-                        <img src="../assets/myBox/box_img2.png" alt="">
+                        <div class="swiper-box-min">
+                            <div class="swiper-container">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <img class="" src="../assets/myBox/swiper5.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="" src="../assets/myBox/swiper6.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="" src="../assets/myBox/swiper7.png" alt="">
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <img class="" src="../assets/myBox/swiper8.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="desc">
                             <div>Price Per MAX</div>
                             <div class="zuck">1 ZUCK Each</div>
@@ -160,6 +195,8 @@
 <script>
     import Header from '../components/Header.vue'
     import Footer from '../components/Footer.vue'
+    import Swiper from "Swiper";
+    import 'swiper/css/swiper.css'
     export default {
         name: 'MysteryBoxes',
         components: { Header, Footer },
@@ -172,8 +209,27 @@
         methods: {
             changeNav(nav) {
                 this.navType = nav
-            }
+            },
+            getSale () {
+                //调用延迟加载 $nextTick
+                this.$nextTick(() => {
+                    let swiper = new Swiper(".swiper-container", {
+                    //是否循环
+                        loop: true,
+                        autoplay: {
+                            //swiper手动滑动之后自动轮播失效的解决方法,包括触碰，拖动，点击pagination,重新启动自动播放
+                            disableOnInteraction: false,
+                            // 自动播放时间：毫秒
+                            delay: 3000
+                        },
+                        slidesPerView: 1,
+                    })
+                })
+            },
         },
+        mounted () {
+            this.getSale()
+        }
     }
 </script>
 
@@ -211,10 +267,16 @@
                 justify-content: center;
                 align-items: center;
                 background: url('../assets/myBox/box_bg2.png') no-repeat center/100% 100%;
-                img {
+                .swiper-box {
                     width: 401px;
                     height: 401px;
+                    overflow: hidden;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
+                
             }
             .img-desc {
                 text-align: left;
@@ -259,10 +321,16 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: center;
-                    img {
+                    .swiper-box-min {
                         width: 93px;
                         height: 93px;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
+                    
                     .desc {
                         font-size: 22px;
                         line-height: 30px;
@@ -556,9 +624,14 @@
                 .img-box {
                     width: 20rem;
                     height: 18.81rem;
-                    img {
-                        width: 16.69rem;
+                    .swiper-box {
+                        width: 17rem;
                         height: 16.69rem;
+                        overflow: hidden;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
                     }
                 }
                 .img-desc {
@@ -594,10 +667,14 @@
                         margin-top: 1.38rem;
                         padding: 0;
                         border: 0.06rem solid #363636;
-                        img {
+                        .swiper-box {
                             width: 5rem;
                             height: 5rem;
-                            margin-left: 0.5rem;
+                            overflow: hidden;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                            }
                         }
                         .desc {
                             margin-right: 0.81rem;

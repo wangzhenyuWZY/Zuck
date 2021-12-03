@@ -12,7 +12,7 @@
                         <div>Owners</div>
                     </div>
                     <div class="type-num">
-                        <div class="num">1.18</div>
+                        <div class="num">1.18 <img src="../assets/myBox/b_an.png" alt=""></div>
                         <div>Floor price</div>
                     </div>
                 </div>
@@ -78,20 +78,20 @@
             </div>
 
             <div class="content">
-                <div v-for="item, index of saleList" :key="index" class="item-box" :class="index !== 0 && parseInt((index + 1) / 5) == parseFloat((index + 1) / 5)  ? '' : 'item-five'">
+                <div v-for="item, index of saleList" :key="index" class="item-box" :class="index !== 0 && parseInt((index + 1) / 5) == parseFloat((index + 1) / 5)  ? '' : 'item-five'" @click="toDetails(index)">
                     <img src="../assets/myBox/box_img5.png" alt="">
                     <div class="max-rank">
                         <div class="max">Crazy MAX #{{ item.max }}</div>
                         <div class="rank">Rank: <span :class="item.rank === 'N' ? 'n' : item.rank === 'R' ? 'r' : item.rank === 'SR' ? 'sr' : item.rank === 'SSR' ? 'ssr' : ''">{{ item.rank }}</span></div>
                     </div>
-                    <div class="btn" @click="toDetails(index)">For sale</div>
+                    <div class="btn">For sale</div>
                     <div class="price">
                         <span>Price</span>
-                        <span>{{ item.price }}</span>
+                        <span>{{ item.price }} <img class="" src="../assets/myBox/b_an.png" alt=""></span>
                     </div>
                     <div class="price">
                         <span>Last Price</span>
-                        <span>{{ item.lastPrice }}</span>
+                        <span>{{ item.lastPrice }} <img src="../assets/myBox/b_an.png" alt=""></span>
                     </div>
                 </div>
             </div>
@@ -131,9 +131,9 @@
 
                 saleList: [
                     { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
-                    { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
-                    { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
-                    { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                    { max: '23', rank: 'N', price: 2.18, lastPrice: 2.18 },
+                    { max: '23', rank: 'SR', price: 2.18, lastPrice: 2.18 },
+                    { max: '23', rank: 'SSR', price: 2.18, lastPrice: 2.18 },
                     { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
                     { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
                     { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
@@ -147,6 +147,13 @@
             }
         },
         methods: {
+            // 获取本地指定文件夹所有图片
+            src (name) {
+                if (name) {
+                    const picture = import.meta.globEager(`../../assets/myBox/*`) // 选择文件夹
+                    return picture[`../../assets/img/other/${name}.png`].default // 返回图片绝对路径
+                }
+            },
             openValue(type){
                 this[type] = true;
             },
@@ -154,7 +161,7 @@
                 this.navFor = nav
             },
             toDetails(index) {
-                this$router.push({ path: '/saleDetail', query: { index }})
+                this.$router.push({ path: '/saleDetail', query: { index }})
             },
             handleSizeChange() {},
             handleCurrentChange() {}
@@ -191,6 +198,11 @@
                 font-weight: 600;
                 color: #06FEFE;
                 line-height: 21px;
+                img {
+                    width: 13px;
+                    height: 13px;
+                    margin-bottom: 5px;
+                }
             }
         }
         .input-box {
@@ -371,7 +383,6 @@
                 }
                 .ssr {
                     font-size: 16px;
-                    font-size: 24px;
                     font-weight: 900;
                     color: #B42CE4;
                 }
@@ -392,6 +403,11 @@
                 margin-top: 5px;
                 display: flex;
                 justify-content: space-between;
+                img {
+                    width: 11px;
+                    height: 11px;
+                    margin-top: 0;
+                }
             }
         }
     }
@@ -567,16 +583,16 @@
                 margin-right: 0;
             }
             .item-box {
-                width: 40%;
+                width: 43%;
                 height: 14rem;
-                padding: 0 .75rem;
+                padding: 0 .55rem;
                 margin-bottom: .75rem;
                 background: url('../assets/myBox/box_bg7.png') no-repeat center/100% 100%;
                 font-size: 0.75rem;
                 font-family: PingFangSC-Semibold, PingFang SC;
                 font-weight: 400;
                 color: #FFFFFF;
-                line-height: 1rem;
+                line-height: 1.2rem;
                 display: flex;
                 flex-flow: column;
                 justify-content: center;
@@ -627,7 +643,7 @@
                 }
                 .price {
                     width: 100%;
-                    margin-top: 0.2rem;
+                    margin-top: 0.3rem;
                     display: flex;
                     justify-content: space-between;
                 }
