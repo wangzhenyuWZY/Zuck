@@ -95,6 +95,7 @@ export default {
         color:rgba(255,255,255,0.6);
         height:43px;
         font-size:14px;
+        text-align:center;
    }
 }
 @media screen and (max-width:900px) {

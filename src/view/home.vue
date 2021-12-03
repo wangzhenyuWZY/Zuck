@@ -93,26 +93,33 @@
         <div class="tl">
           <img src="../assets/btn16.png" class="btn7">
         </div>
-        <img src="../assets/btn9.png" class="btn9">
-        <img src="../assets/btn8.png" class="btn10">
-        <p class="zucktext">ZUCK token is the main in-META currency. It will be used to trade, exchange, and buy social props.</p>
-        <img src="../assets/btn10.png" class="btn11">
-        <p class="zucktext">The ZUCKMETA  create a virtual marketplace for virtual goods such as NFTs where users can buy, sell and exchange. </p>
-        <img src="../assets/btn11.png" class="btn12">
+      </div>
+      <div class="mobPanel4">
+         <img src="../assets/btn9.png" class="btn9">
+          <img src="../assets/btn8.png" class="btn10">
+          <p class="zucktext">ZUCK token is the main in-META currency. It will be used to trade, exchange, and buy social props.</p>
+          <img src="../assets/btn10.png" class="btn11">
+          <p class="zucktext">The ZUCKMETA  create a virtual marketplace for virtual goods such as NFTs where users can buy, sell and exchange. </p>
+          <img src="../assets/btn11.png" class="btn12">
+      </div>
+      <div class="mobPanel5">
         <img src="../assets/btn12.png" class="btn13">
-        <img src="../assets/btn17.png" class="btn14">
+          <img src="../assets/btn17.png" class="btn14">
+          
+      </div>
+      <div class="mobPanel6">
         <img src="../assets/btn14.png" class="btn15">
-        <p class="tokentext">$ZUCK has been launched. You can see as follows and  buy on PankcakeSwap.</p>
-        <div class="partner">
-          <a><img src="../assets/partner1.png"></a>
-          <a><img src="../assets/partner2.png"></a>
-          <a><img src="../assets/partner3.png"></a>
-          <a><img src="../assets/partner4.png"></a>
-          <a><img src="../assets/partner5.png"></a>
-          <a><img src="../assets/partner6.png"></a>
-          <a><img src="../assets/partner7.png"></a>
-          <a><img src="../assets/partner8.png"></a>
-        </div>
+          <p class="tokentext">$ZUCK has been launched. You can see as follows and  buy on PankcakeSwap.</p>
+          <div class="partner">
+            <a><img src="../assets/partner1.png"></a>
+            <a><img src="../assets/partner2.png"></a>
+            <a><img src="../assets/partner3.png"></a>
+            <a><img src="../assets/partner4.png"></a>
+            <a><img src="../assets/partner5.png"></a>
+            <a><img src="../assets/partner6.png"></a>
+            <a><img src="../assets/partner7.png"></a>
+            <a><img src="../assets/partner8.png"></a>
+          </div>
       </div>
     </div>
     <Footer></Footer>
@@ -166,9 +173,13 @@ export default {
 }
 </script>
 <style lang="less">
+@font-face { // 正常
+    font-family: ZhanKuQingKeHuangYouTi; 
+    src:url('../assets/ZhanKuQingKeHuangYouTi-2.ttf');
+}
 .container{
   width: 100%;
-  
+  font-family: ZhanKuQingKeHuangYouTi;
   min-height:100vh;
   .homeContainerMob{
     display:none;
@@ -227,7 +238,7 @@ export default {
       .btmbg{
         width:100%;
       }
-      .btn4,.btn5{
+      .btn4,.btn5,.btn6,.btn7{
         display:block;
         margin:0 auto;
       }
@@ -399,18 +410,19 @@ export default {
         background:url(../assets/bg3.png) no-repeat top center;
         background-size:100% 100%;
         padding-bottom:85px;
+        text-align:center;
         .zucktip{
           text-align:center;
           font-size:20px;
           color:#06FEFE;
           line-height:28px;
-          padding-top:445px;
+          padding-top:520px;
           padding-bottom:24px;
           text-transform: uppercase;
         }
       }
       .mobPanel2{
-        background:url(../assets/bg4.png) no-repeat center;
+        background:url(../assets/bg4.png) no-repeat top center;
         background-size:100% 100%;
         padding:260px 35px 160px;
         text-align:left;
@@ -426,7 +438,7 @@ export default {
         }
       }
       .mobPanel3{
-        background:url(../assets/bg5.png) no-repeat center;
+        background:url(../assets/bg5.png) no-repeat top center;
         background-size:100% 100%;
         padding:40px 30px;
         .btn4{
@@ -469,6 +481,11 @@ export default {
             margin-left:-40px;
           }
         }
+      }
+      .mobPanel4{
+        text-align:center;
+        background:url(../assets/bg6.png) no-repeat top center;
+        background-size:100% 100%;
         .btn9{
           width:238px;
           margin-top:120px;
@@ -491,19 +508,31 @@ export default {
           margin-bottom:50px;
         }
         .btn12{
-          width:110%;
-          margin-left:-10%;
+          width:100%;
           margin-top:120px;
         }
+      }
+      .mobPanel5{
+        background:url(../assets/bg7.png) no-repeat top center;
+        background-size:100% 100%;
+        text-align:center;
+        padding:0 10px;
         .btn13{
           width:260px;
           margin-top:120px;
           margin-bottom:40px;
         }
         .btn14{
-          width:110%;
-          margin-left:-5%;
+          width:100%;
         }
+        
+      }
+      .mobPanel6{
+        background:url(../assets/bg8.png) no-repeat top center;
+        background-size:100% 100%;
+        text-align:center;
+        height:514px;
+        padding:0 30px;
         .btn15{
           width:236px;
           margin-top:120px;
@@ -515,6 +544,7 @@ export default {
           line-height:32px;
           text-align:left;
           padding-bottom:20px;
+          padding:0 10px;
         }
         .partner{
           display:flex;
