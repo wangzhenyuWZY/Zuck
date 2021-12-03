@@ -11,22 +11,26 @@
             <a class="menu" @click="toLink(6)">Marketplace</a>
             <a class="menu" @click="toLink(7)">My Collection</a>
         </div>
+        <div class="wallet">
+          <img src="../assets/bsc.jpg" >
+          {{defaultAddress}}
+        </div>
     </div>
     <div class="mobHeader">
       <div class="nav_merge">
-          <img class="merge_img" src="../assets/mergeico.png" @click="drawer = true" alt="">
+          <img class="merge_img" src="../assets/more.png" @click="drawer = true" alt="">
         </div>
         <el-drawer title="我是标题" v-model="drawer" :show-close="false" custom-class="drawer_body" :with-header="false" @click="tolerPop=false">  
           <i class="closeico" @click="drawer = false"></i>
           <ul class="drawer_nav">
             <li @click="toLink(0)"><a class="menu">Home</a></li>
-            <li @click="toLink(1)"><a class="menu">Game Trailer</a></li>
-            <li @click="toLink(2)"><a class="menu">News</a></li>
-            <li @click="toLink(3)"><a class="menu">NFT Portal</a></li>
-            <li @click="toLink(4)"><a class="menu">Tokenomics</a></li>
+            <li @click="toLink(1)"><a class="menu">Tokenomics</a></li>
+            <li @click="toLink(2)"><a class="menu">RoadMap</a></li>
+            <li @click="toLink(3)"><a class="menu">Community</a></li>
+            <li @click="toLink(4)"><a class="menu">Mystery Boxes</a></li>
             <!-- <li @click="toLink(5)"><a class="menu">IDO</a></li> -->
-            <li @click="toLink(6)"><a class="menu">Roadmap</a></li>
-            <li @click="toLink(7)"><a class="menu">Contact</a></li>
+            <li @click="toLink(6)"><a class="menu">Marketplace</a></li>
+            <li @click="toLink(7)"><a class="menu">My Collection</a></li>
           </ul>
         </el-drawer>
     </div>    
@@ -169,10 +173,24 @@ export default {
     left:0;
     right:0;
     z-index:9;
+    align-item:center;
+    .more{
+      display:none;
+    }
     .logo{
-        width:228px;
-        height:59px;
+        width:180px;
+        height:48px;
         margin-top:12px;
+    }
+    .wallet{
+      font-size:12px;
+      color:#fff;
+      line-height:88px;
+      img{
+        width:30px;
+        height:30px;
+        border-radius:50%;
+      }
     }
     .menus{
         display:flex;
@@ -239,11 +257,23 @@ export default {
     }
   }
     .header{
-        display:none;
-        height:40px;
+      width:100%;
+        height:54px;
         padding:0 15px;
+        background:#000000;
+        box-sizing:border-box;
+        .wallet{
+          display:none;
+        }
+        .more{
+          display:block;
+          width:33px;
+          height:33px;
+        }
         .logo{
-            width:190px;
+            width:119px;
+            height:38px;
+            margin-top:6px;
         }
         .menus{
             display:none;
@@ -309,7 +339,7 @@ export default {
     border-bottom:1px solid #363636;
     a{
         display:block;
-        color:#ADADAD;
+        color:#fff;
         text-align:left;
         padding-left:33px;
         font-family: TimesNewRomanPS-BoldMT, TimesNewRomanPS;

@@ -17,7 +17,6 @@
             <p>The metaverse is the next evolution of social connection. <br>3D spaces in the metaverse will let you socialize, learn, <br>collaborate and play in ways that go beyond what we can <br>imagine.Zuck's vision is to help bring the metaverse to life.</p>
           </div>
         </div>
-        
       </div>
       <div class="btmCon">
         <img src="../assets/bg2.png" class="btmbg">
@@ -64,6 +63,55 @@
               <a><img src="../assets/partner8.png"></a>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="homeContainerMob">
+      <div class="mobPanel1">
+        <p class="zucktip">
+          ZUCK is jumping the<br> metaverse and so are we
+        </p>
+        <img src="../assets/btn1.png">
+        <img src="../assets/btn15.png">
+      </div>
+      <div class="mobPanel2">
+        <img src="../assets/btn3.png" class="btn1">
+        <p class="abouttext">The metaverse is the next evolution of social connection. 3D spaces in the metaverse will let you socialize, learn, collaborate and play in ways that go beyond what we can imagine.Zuck's vision is to help bring the metaverse to life.</p>
+      </div>
+      <div class="mobPanel3">
+        <img src="../assets/btn4.png" class="btn4">
+        <img src="../assets/btn5.png" class="btn5">
+        <div class="baifenbi">
+          <p><span>3.0%</span> Redistribution     </p>
+          <p><span>2.0%</span>  Marketingand Brand     </p>
+          <p><span>3.0%</span> Auto liquidity Pool </p>
+        </div>
+        <p class="simplytext">
+          Simply earn ZUCK tokens by holding! 3.0% Holder Rewards are dispersed to all token holders relative to their holding percentages. Also 2.0% Marketing and Brand  keeps our token extremely fomo and healthy for many years to come. And 3.0% Auto liquidity pool can push the price slowly! Be a HODL's with us and earn more tokens on auto-pilot!
+        </p>
+        <img src="../assets/btn6.png" class="btn6">
+        <div class="tl">
+          <img src="../assets/btn16.png" class="btn7">
+        </div>
+        <img src="../assets/btn9.png" class="btn9">
+        <img src="../assets/btn8.png" class="btn10">
+        <p class="zucktext">ZUCK token is the main in-META currency. It will be used to trade, exchange, and buy social props.</p>
+        <img src="../assets/btn10.png" class="btn11">
+        <p class="zucktext">The ZUCKMETA  create a virtual marketplace for virtual goods such as NFTs where users can buy, sell and exchange. </p>
+        <img src="../assets/btn11.png" class="btn12">
+        <img src="../assets/btn12.png" class="btn13">
+        <img src="../assets/btn17.png" class="btn14">
+        <img src="../assets/btn14.png" class="btn15">
+        <p class="tokentext">$ZUCK has been launched. You can see as follows and  buy on PankcakeSwap.</p>
+        <div class="partner">
+          <a><img src="../assets/partner1.png"></a>
+          <a><img src="../assets/partner2.png"></a>
+          <a><img src="../assets/partner3.png"></a>
+          <a><img src="../assets/partner4.png"></a>
+          <a><img src="../assets/partner5.png"></a>
+          <a><img src="../assets/partner6.png"></a>
+          <a><img src="../assets/partner7.png"></a>
+          <a><img src="../assets/partner8.png"></a>
         </div>
       </div>
     </div>
@@ -122,6 +170,9 @@ export default {
   width: 100%;
   
   min-height:100vh;
+  .homeContainerMob{
+    display:none;
+  }
   .homeContainer{
     .basicPanel{
       width:1200px;
@@ -336,6 +387,149 @@ export default {
         }
       }
     }
+}
+@media screen and (max-width:900px){
+  .container{
+    .homeContainer{
+      display:none;
+    }
+    .homeContainerMob{
+      display:block;
+      .mobPanel1{
+        background:url(../assets/bg3.png) no-repeat top center;
+        background-size:100% 100%;
+        padding-bottom:85px;
+        .zucktip{
+          text-align:center;
+          font-size:20px;
+          color:#06FEFE;
+          line-height:28px;
+          padding-top:445px;
+          padding-bottom:24px;
+          text-transform: uppercase;
+        }
+      }
+      .mobPanel2{
+        background:url(../assets/bg4.png) no-repeat center;
+        background-size:100% 100%;
+        padding:260px 35px 160px;
+        text-align:left;
+        .btn1{
+          width:260px;
+          margin-bottom:56px;
+        }
+        .abouttext{
+          font-size:22px;
+          color:#fff;
+          line-height:30px;
+          text-align:left;
+        }
+      }
+      .mobPanel3{
+        background:url(../assets/bg5.png) no-repeat center;
+        background-size:100% 100%;
+        padding:40px 30px;
+        .btn4{
+          width:260px;
+          margin-bottom:46px;
+        }
+        .btn5{
+          width:280px;
+        }
+        .baifenbi{
+          padding-top:16px;
+          text-align:center;
+          p{
+            font-size:15px;
+            color:#fff;
+            line-height:100%;
+            padding-bottom:15px;
+            span{
+              font-size:23px;
+              color:#06FEFE;
+              line-height:100%;
+            }
+          }
+        }
+        .simplytext{
+          font-size:22px;
+          color:#fff;
+          line-height:34px;
+          text-align:left;
+          word-break: break-all;
+        }
+        .btn6{
+          width:295px;
+          margin-top:100px;
+        }
+        .tl{
+          text-align:left;
+          padding-top:36px;
+          img{
+            margin-left:-40px;
+          }
+        }
+        .btn9{
+          width:238px;
+          margin-top:120px;
+          margin-bottom:26px;
+        }
+        .btn10{
+          width:350px;
+          margin-left:-15px;
+        }
+        .zucktext{
+          font-size:22px;
+          color:#fff;
+          line-height:36px;
+          text-align:left;
+          padding-left:15px;
+        }
+        .btn11{
+          width:236px;
+          margin-top:200px;
+          margin-bottom:50px;
+        }
+        .btn12{
+          width:110%;
+          margin-left:-10%;
+          margin-top:120px;
+        }
+        .btn13{
+          width:260px;
+          margin-top:120px;
+          margin-bottom:40px;
+        }
+        .btn14{
+          width:110%;
+          margin-left:-5%;
+        }
+        .btn15{
+          width:236px;
+          margin-top:120px;
+          margin-bottom:18px;
+        }
+        .tokentext{
+          font-size:22px;
+          color:#fff;
+          line-height:32px;
+          text-align:left;
+          padding-bottom:20px;
+        }
+        .partner{
+          display:flex;
+          justify-content:left;
+          flex-wrap:wrap;
+          a{
+            margin:16px 2px;
+          }
+          img{
+            width:100px;
+          }
+        }
+      }
+    }
+  }
 }
 </style>
 <style >
