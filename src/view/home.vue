@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <Header></Header>
+    <Header @toToken="toToken" @toRoadmap="toRoadmap" @toCommunity="toCommunity"></Header>
     <div class="homeContainer">
       <div class="topCon">
         <img src="../assets/bg.png" class="topbg">
@@ -21,7 +21,7 @@
       <div class="btmCon">
         <img src="../assets/bg2.png" class="btmbg">
         <div class="basicPanel">
-          <img src="../assets/btn4.png" class="btn4">
+          <img src="../assets/btn4.png" class="btn4" id="btn4">
           <img src="../assets/btn5.png" class="btn5">
           <div class="baifenbi">
             <p><span>3.0%</span> Redistribution     </p>
@@ -162,7 +162,12 @@ export default {
       }
   },
   methods: {
-    
+    toToken(){
+      this.$el.querySelector('#btn4').scrollIntoView({
+          behavior: "smooth",  // 平滑过渡
+          block: "start"  // 上边框与视窗顶部平齐。默认值
+      });
+    }
   },
   created(){
     
@@ -174,12 +179,12 @@ export default {
 </script>
 <style lang="less">
 @font-face { // 正常
-    font-family: ZhanKuQingKeHuangYouTi; 
+    font-family: "ZhanKuQingKeHuangYouTi"; 
     src:url('../assets/ZhanKuQingKeHuangYouTi-2.ttf');
 }
 .container{
   width: 100%;
-  font-family: ZhanKuQingKeHuangYouTi;
+  font-family: "ZhanKuQingKeHuangYouTi";
   min-height:100vh;
   .homeContainerMob{
     display:none;

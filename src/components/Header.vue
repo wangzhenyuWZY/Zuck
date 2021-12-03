@@ -97,21 +97,19 @@ export default {
               this.$router.push('/')
           }else if(i==1){
               this.$router.push('/')
-              this.$emit('toGame')
+              this.$emit('toToken')
           }else if(i==2){
               this.$router.push('/')
-              this.$emit('toNews')
+              this.$emit('toRoadmap')
           }else if(i==3){
-              this.$router.push('/portalA')
+              this.$router.push('/')
+              this.$emit('toCommunity')
           }else if(i==4){
               this.$router.push('/MysteryBoxes')
-              this.$emit('toToken')
           }else if(i==6){
               this.$router.push('/ShowAll')
-              this.$emit('toMap')
           }else if(i==7){
               this.$router.push('/')
-              this.$emit('toContact')
           }
           this.drawer = false
       },

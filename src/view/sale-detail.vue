@@ -2,7 +2,7 @@
     <div class="detail">
         <Header />
         <div class="content">
-            <div class="back" @click="back"><< Back to Market</div>
+            <div class="back" @click="back"> &lt;&lt; Back to Market</div>
             <div class="info">
                 <div class="img-box">
                     <img src="../assets/myBox/detail_img.png" alt="">
