@@ -73,10 +73,12 @@
         </p>
         <router-link to="MysteryBoxes"><img src="../assets/btn1.png"></router-link>
         <a href="https://zuckmetaverse.gitbook.io/zuck/" target="_black"><img src="../assets/btn15.png"></a>
+        <div class="morebtm"><img src="../assets/morebtm.png"></div>
       </div>
       <div class="mobPanel2">
         <img src="../assets/btn3.png" class="btn1">
         <p class="abouttext">The metaverse is the next evolution of social connection. 3D spaces in the metaverse will let you socialize, learn, collaborate and play in ways that go beyond what we can imagine.Zuck's vision is to help bring the metaverse to life.</p>
+        <div class="morebtm"><img src="../assets/morebtm.png"></div>
       </div>
       <div class="mobPanel3 ">
         <img src="../assets/btn4.png" class="btn4 linkbtn4">
@@ -89,23 +91,27 @@
         <p class="simplytext">
           Simply earn ZUCK tokens by holding! 3.0% Holder Rewards are dispersed to all token holders relative to their holding percentages. Also 2.0% Marketing and Brand  keeps our token extremely fomo and healthy for many years to come. And 3.0% Auto liquidity pool can push the price slowly! Be a HODL's with us and earn more tokens on auto-pilot!
         </p>
+        <div class="morebtm"><img src="../assets/morebtm.png"></div>
         <img src="../assets/btn6.png" class="btn6">
         <div class="tl">
           <img src="../assets/btn16.png" class="btn7">
         </div>
+        <div class="morebtm"><img src="../assets/morebtm.png"></div>
       </div>
       <div class="mobPanel4">
          <img src="../assets/btn9.png" class="btn9">
           <img src="../assets/btn8.png" class="btn10">
           <p class="zucktext">ZUCK token is the main in-META currency. It will be used to trade, exchange, and buy social props.</p>
+          <div class="morebtm"><img src="../assets/morebtm.png"></div>
           <img src="../assets/btn10.png" class="btn11">
           <p class="zucktext">The ZUCKMETA  create a virtual marketplace for virtual goods such as NFTs where users can buy, sell and exchange. </p>
           <img src="../assets/btn11.png" class="btn12">
+          <div class="morebtm"><img src="../assets/morebtm.png"></div>
       </div>
       <div class="mobPanel5 linkbtn5">
         <img src="../assets/btn12.png" class="btn13">
           <img src="../assets/btn17.png" class="btn14">
-          
+          <div class="morebtm"><img src="../assets/morebtm.png"></div>
       </div>
       <div class="mobPanel6">
         <img src="../assets/btn14.png" class="btn15">
@@ -426,10 +432,14 @@ export default {
     }
     .homeContainerMob{
       display:block;
+      .morebtm{
+        text-align:center;
+        padding-top:38px;
+      }
       .mobPanel1{
         background:url(../assets/bg3.png) no-repeat top center;
         background-size:100% 100%;
-        padding-bottom:85px;
+        padding-bottom:55px;
         text-align:center;
         .zucktip{
           text-align:center;
@@ -443,7 +453,7 @@ export default {
       .mobPanel2{
         background:url(../assets/bg4.png) no-repeat top center;
         background-size:100% 100%;
-        padding:260px 35px 160px;
+        padding:260px 35px 0;
         text-align:center;
         .btn1{
           width:260px;
@@ -454,6 +464,7 @@ export default {
           color:#fff;
           line-height:30px;
           text-align:left;
+          padding-bottom:100px;
         }
       }
       .mobPanel3{
@@ -520,16 +531,15 @@ export default {
           color:#fff;
           line-height:36px;
           text-align:left;
-          padding-left:15px;
+          padding:0 50px 80px;
         }
         .btn11{
           width:236px;
-          margin-top:200px;
+          margin-top:70px;
           margin-bottom:50px;
         }
         .btn12{
           width:100%;
-          margin-top:120px;
         }
       }
       .mobPanel5{
@@ -538,7 +548,7 @@ export default {
         text-align:center;
         padding:0 10px;
         .btn13{
-          width:260px;
+          width:288px;
           margin-top:120px;
           margin-bottom:40px;
         }
@@ -555,7 +565,7 @@ export default {
         padding:0 30px;
         .btn15{
           width:236px;
-          margin-top:120px;
+          margin-top:80px;
           margin-bottom:18px;
         }
         .tokentext{
