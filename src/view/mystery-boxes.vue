@@ -533,6 +533,7 @@
                 font-weight: 400;
                 font-family: zcoolqingkehuangyouti-Regular, zcoolqingkehuangyouti;
                 color: #FFFFFF;
+                text-align:center;
                 background: url('../assets/myBox/box_bg3.png') no-repeat center/100% 100%;
             }
             .type_box {
@@ -578,6 +579,7 @@
                 font-weight: 400;
                 color: #FFFFFF;
                 line-height: 66px;
+                text-align:center;
                 text-shadow: 0px 0px 6px #04ECFF;
                 background: url('../assets/myBox/box_bg4.png') no-repeat center/100% 100%;
             }

@@ -4,22 +4,22 @@
             <div class="left">
                 <h2>Community Call.</h2>
                 <div class="linklist">
-                    <div class="linkitem">
+                    <a class="linkitem" href="https://t.me/ZUCKMETAWORLD" target="_black">
                         <img src="../assets/linkimg1.png">
                         <p>Telegram</p>
-                    </div>
-                    <div class="linkitem">
+                    </a>
+                    <a class="linkitem" href="https://twitter.com/ZuckMeta" target="_black">
                         <img src="../assets/linkimg2.png">
                         <p>Twitter</p>
-                    </div>
-                    <div class="linkitem">
+                    </a>
+                    <a class="linkitem" href="https://www.facebook.com/profile.php?id=100075505755366" target="_black">
                         <img src="../assets/linkimg3.png">
                         <p>Meta</p>
-                    </div>
-                    <div class="linkitem">
+                    </a>
+                    <a class="linkitem" href="https://zuckmetaverse.gitbook.io/zuck/" target="_black">
                         <img src="../assets/linkimg4.png">
                         <p>Gitbooks</p>
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="right">
@@ -84,6 +84,7 @@ export default {
                        color:#fff;
                        line-height:100%;
                        padding-top:10px;
+                       text-align:center;
                    }
                }
            }

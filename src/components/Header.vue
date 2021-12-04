@@ -32,6 +32,10 @@
             <li @click="toLink(6)"><a class="menu">Marketplace</a></li>
             <li @click="toLink(7)"><a class="menu">My Collection</a></li>
           </ul>
+          <div class="wallet">
+            <img src="../assets/bsc.jpg" >
+            {{defaultAddress}}
+          </div>
         </el-drawer>
     </div>    
   </div>
@@ -247,6 +251,21 @@ export default {
     display:block;
     display:flex;
     justify-content: flex-end;
+    .wallet{
+      font-size:14px;
+      color:#fff;
+      line-height:88px;
+      position:absolute;
+      bottom:0;
+      width:100%;
+      text-align:center;
+      img{
+        width:30px;
+        height:30px;
+        border-radius:50%;
+        margin-right:10px;
+      }
+    }
     .logo{
       width:88px;
       height:38px;
@@ -270,7 +289,7 @@ export default {
         }
         .logo{
             width:119px;
-            height:38px;
+            height:33px;
             margin-top:6px;
         }
         .menus{

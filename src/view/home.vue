@@ -1,14 +1,14 @@
 <template>
   <div class="container">
     <Header @toToken="toToken" @toRoadmap="toRoadmap" @toCommunity="toCommunity"></Header>
-    <div class="homeContainer">
+    <div class="homeContainer" v-if="!_isMobile">
       <div class="topCon">
-        <img src="../assets/bg.png" class="topbg">
+        <img src="../assets/bg.jpg" class="topbg">
         <div class="basicPanel">
           <div class="banners">
             <div class="btnsbar">
-              <a class="btn"><img src="../assets/btn1.png"></a>
-              <a class="btn"><img src="../assets/btn2.png"></a>
+              <router-link to="MysteryBoxes" class="btn"><img src="../assets/btn1.png"></router-link>
+              <a class="btn" href="https://zuckmetaverse.gitbook.io/zuck/" target="_black"><img src="../assets/btn2.png"></a>
             </div>
             <p>ZUCK is jumping the metaverse and so are we</p>
           </div>
@@ -19,9 +19,9 @@
         </div>
       </div>
       <div class="btmCon">
-        <img src="../assets/bg2.png" class="btmbg">
+        <img src="../assets/bg2.jpg" class="btmbg">
         <div class="basicPanel">
-          <img src="../assets/btn4.png" class="btn4" id="btn4">
+          <img src="../assets/btn4.png" class="btn4 linkbtn4">
           <img src="../assets/btn5.png" class="btn5">
           <div class="baifenbi">
             <p><span>3.0%</span> Redistribution     </p>
@@ -48,7 +48,7 @@
             </div>
           </div>
           <div class="zuckmeta">
-            <img src="../assets/btn12.png" class="btn12">
+            <img src="../assets/btn12.png" class="btn12 linkbtn5">
             <img src="../assets/btn13.png" class="btn13">
             <img src="../assets/btn14.png" class="btn14">
             <p class="zucktoken">$ZUCK has been launched. You can see as follows and  buy on PankcakeSwap.</p>
@@ -66,20 +66,20 @@
         </div>
       </div>
     </div>
-    <div class="homeContainerMob">
+    <div class="homeContainerMob" v-if="_isMobile">
       <div class="mobPanel1">
         <p class="zucktip">
           ZUCK is jumping the<br> metaverse and so are we
         </p>
-        <img src="../assets/btn1.png">
-        <img src="../assets/btn15.png">
+        <router-link to="MysteryBoxes"><img src="../assets/btn1.png"></router-link>
+        <a href="https://zuckmetaverse.gitbook.io/zuck/" target="_black"><img src="../assets/btn15.png"></a>
       </div>
       <div class="mobPanel2">
         <img src="../assets/btn3.png" class="btn1">
         <p class="abouttext">The metaverse is the next evolution of social connection. 3D spaces in the metaverse will let you socialize, learn, collaborate and play in ways that go beyond what we can imagine.Zuck's vision is to help bring the metaverse to life.</p>
       </div>
-      <div class="mobPanel3">
-        <img src="../assets/btn4.png" class="btn4">
+      <div class="mobPanel3 ">
+        <img src="../assets/btn4.png" class="btn4 linkbtn4">
         <img src="../assets/btn5.png" class="btn5">
         <div class="baifenbi">
           <p><span>3.0%</span> Redistribution     </p>
@@ -102,7 +102,7 @@
           <p class="zucktext">The ZUCKMETA  create a virtual marketplace for virtual goods such as NFTs where users can buy, sell and exchange. </p>
           <img src="../assets/btn11.png" class="btn12">
       </div>
-      <div class="mobPanel5">
+      <div class="mobPanel5 linkbtn5">
         <img src="../assets/btn12.png" class="btn13">
           <img src="../assets/btn17.png" class="btn14">
           
@@ -122,7 +122,7 @@
           </div>
       </div>
     </div>
-    <Footer></Footer>
+    <Footer class="linkbtn6"></Footer>
   </div>
 </template>
 
@@ -163,10 +163,25 @@ export default {
   },
   methods: {
     toToken(){
-      this.$el.querySelector('#btn4').scrollIntoView({
+      this.$el.querySelector('.linkbtn4').scrollIntoView({
           behavior: "smooth",  // 平滑过渡
           block: "start"  // 上边框与视窗顶部平齐。默认值
       });
+    },
+    toRoadmap(){
+      this.$el.querySelector('.linkbtn5').scrollIntoView({
+          behavior: "smooth",  // 平滑过渡
+          block: "start"  // 上边框与视窗顶部平齐。默认值
+      });
+    },
+    toCommunity(){
+      this.$el.querySelector('.linkbtn6').scrollIntoView({
+          behavior: "smooth",  // 平滑过渡
+          block: "start"  // 上边框与视窗顶部平齐。默认值
+      });
+    },
+    toMarket(){
+      this.$router.push('/MysteryBoxes')
     }
   },
   created(){
@@ -423,14 +438,13 @@ export default {
           line-height:28px;
           padding-top:520px;
           padding-bottom:24px;
-          text-transform: uppercase;
         }
       }
       .mobPanel2{
         background:url(../assets/bg4.png) no-repeat top center;
         background-size:100% 100%;
         padding:260px 35px 160px;
-        text-align:left;
+        text-align:center;
         .btn1{
           width:260px;
           margin-bottom:56px;
@@ -446,6 +460,7 @@ export default {
         background:url(../assets/bg5.png) no-repeat top center;
         background-size:100% 100%;
         padding:40px 30px;
+        text-align:center;
         .btn4{
           width:260px;
           margin-bottom:46px;
