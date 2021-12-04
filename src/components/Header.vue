@@ -199,7 +199,7 @@ export default {
         padding-top:30px;
         padding-left:0;
         .menu{
-            font-size:16px;
+            font-size:14px;
             color:#fff;
             line-height:24px;
             position:relative;

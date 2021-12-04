@@ -105,7 +105,7 @@
 .detail {
     text-align: left;
     padding-top: 88px;
-    background: url('../assets/myBox/det_bg.png') no-repeat center/100% 100%;
+    background: url('../assets/myBox/det_bg.jpg') no-repeat center/100% 100%;
     .content {
         width: 1200px;
         margin: 0 auto 65px;

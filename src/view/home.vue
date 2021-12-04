@@ -201,7 +201,7 @@ export default {
 <style lang="less">
 @font-face { // 正常
     font-family: "ZhanKuQingKeHuangYouTi"; 
-    src:url('../assets/ZhanKuQingKeHuangYouTi-2.ttf');
+    src:url('../assets/ToppanBunkyuGothicPr6N-Regular-AlphaNum-02.otf');
 }
 .container{
   width: 100%;
