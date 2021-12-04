@@ -37,4 +37,14 @@
         letter-spacing: 2px;
     }
 }
+@media screen and (max-width: 1200px) {
+    .coming {
+        padding-top: 4rem;
+        background: url('../assets/myBox/place_bg1_min.png') no-repeat center/100% 100%;
+        .text {
+            font-size: 2rem;
+            line-height: 30rem;
+        }
+    }
+}
 </style>
