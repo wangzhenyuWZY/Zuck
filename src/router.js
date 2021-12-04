@@ -14,6 +14,11 @@ const router = createRouter({
             path: '/MysteryBoxes',
             name: 'MysteryBoxes',
             component: () => import('./view/mystery-boxes.vue')
+        },
+        {
+            path: '/Coming',
+            name: 'Coming',
+            component: () => import('./view/Coming-Soon.vue')
         }
     ]
 })

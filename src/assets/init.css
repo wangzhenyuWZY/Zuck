@@ -18,13 +18,17 @@ img {border:0; vertical-align:middle; } /* 去掉图片低测默认的3像素空
 
 table { border-collapse:collapse; }
 
-
+html {
+    height: 100%;
+}
 
 body {
 
 font:12px/150% Arial,Verdana,"\5b8b\4f53";
 
 color:#666;
+
+height: 100%;
 
 }
 
@@ -56,6 +60,7 @@ s,i,em{font-style:normal;text-decoration:none;}
 
 #app{
     margin:0;
+    height: 100%;
 }
 
 /*公共类*/

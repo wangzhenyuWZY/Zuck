@@ -2,7 +2,7 @@
     <div class="mystery-boxes">
         <Header />
         <div class="top-img">
-            <!-- <img class="min-img" src="../assets/myBox/min.png" alt=""> -->
+            <img class="min-img" src="../assets/myBox/min_icon.png" alt="">
         </div>
         <div class="content">
             <div class="shop">
@@ -68,6 +68,9 @@
                     </div>
                     <div class="mint-btn">Mint Now</div>
                 </div>
+            </div>
+            <div class="min-icon-box">
+                <img class="min-icon" src="../assets/myBox/min_icon.png" alt="">
             </div>
             <div class="nav">
                 <div :class="navType === 1 ? 'on' : ''" @click="changeNav(1)">Product Description</div>
@@ -243,9 +246,10 @@
         position: relative;
         background: url('../assets/myBox/box_top.png') no-repeat center/100% 100%;
         .min-img {
+            display: none;
             position: absolute;
             bottom: 1rem;
-            transform: translate(-50%,0);
+            transform: translate(-50%, 0);
         }
     }
     .content {
@@ -411,6 +415,13 @@
                     cursor: pointer;
                     color: #000000;
                 }  
+            }
+        }
+        .min-icon-box {
+            width: 2.74rem;
+            margin: 0 auto;
+            .min-icon {
+                width: 100%;
             }
         }
         .nav {
@@ -610,8 +621,16 @@
         height: 100%;
         .top-img {
             width: 100%;
-            height: 56rem;
+            height: 50rem;
             background: url('../assets/myBox/min_top_bg.png') no-repeat center/100% 100%;
+            .min-img {
+                display: block;
+                width: 2.74rem;
+                position: absolute;
+                bottom: 1rem;
+                left: 50%;
+                /* transform: translate(-50%， 0); */
+            }
         }
         .content {
             width: 100%;
@@ -642,7 +661,7 @@
                     margin-top: 1rem;
                     .sale {
                         width: 100%;
-                        font-size: 1.38rem;
+                        font-size: .9rem;
                         line-height: 1.63rem;
                         letter-spacing: 1px;
                         .soon {
@@ -724,9 +743,17 @@
                     }  
                 }
             }
+            .min-icon-box {
+                display: block;
+                width: 2.74rem;
+                margin: 4.9rem auto 0;
+                .min-icon {
+                    width: 100%;
+                }
+            }
             .nav {
                 width: 94%;
-                margin: 61px auto 0;
+                margin: 2.13rem auto 0;
                 font-size: .8rem;
                 line-height: 1.5rem;
                 display: flex;
