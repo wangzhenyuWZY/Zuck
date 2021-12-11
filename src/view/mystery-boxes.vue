@@ -96,11 +96,11 @@
                 <div v-if="navType === 2" class="details">
                     <div class="">
                         1、There will be <span class="on-text">1000</span> Mystery Boxes on sale,Every user can only buy a maximum of 5 boxes.
-                        <br>2、Zuckerberg's MAX series will include Crazy MAX,Mad MAX ,King MAX  and Mars MAX.Their rank is N, R, SR and SSR . Each N, R, SR and SSR used to offset  single transaction tax and ZUCKSwap'fee dividend and also Get dividends from ZUCK Mammon.
+                        <br>2、Zuckerberg's MAX series will include Crazy MAX,Mad MAX ,King MAX and Mars MAX.Their rank is N, R, SR and SSR . Each N, R, SR and SSR used to offset single transaction tax and ZUCKSwap'fee dividend and also Get dividends from ZUCK Mammon.
                     </div>
                     <div>
                         <div>
-                            2.NFT Privilege：
+                            3、NFT Privilege：
                         </div>
                         <div>
                             <span class="on-text">Crazy MAX :</span>
@@ -108,15 +108,15 @@
                         </div>
                         <div>
                             <span class="on-text">Mad MAX :</span>
-                            Rank R, 200 NFTs, Each R can be used  to offset 3% single transaction tax and ZUCKSwap'fee dividend
+                            Rank R, 200 NFTs, Each R can be used to offset 3% single transaction tax and ZUCKSwap'fee dividend
                         </div>
                         <div>
                             <span class="on-text">King MAX :</span>
-                            Rank SR, 90 NFTs, Each SR can be used  to offset 5% single transaction tax and ZUCKSwap'fee dividend and also get dividends from ZUCK Mammon
+                            Rank SR, 90 NFTs, Each SR can be used to offset 5% single transaction tax and ZUCKSwap'fee dividend and also get dividends from ZUCK Mammon
                         </div>
                         <div>
                             <span class="on-text">Mars MAX :</span>
-                            Rank SSR,  10 NFTs, Each SR can be used  to offset 8% single transaction tax and ZUCKSwap'fee dividend and also get dividends from ZUCK Mammon
+                            Rank SSR, 10 NFTs, Each SR can be used to offset 8% single transaction tax and ZUCKSwap'fee dividend and also get dividends from ZUCK Mammon and also obtain the governance privileges of ZUCKDAO
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
                             //swiper手动滑动之后自动轮播失效的解决方法,包括触碰，拖动，点击pagination,重新启动自动播放
                             disableOnInteraction: false,
                             // 自动播放时间：毫秒
-                            delay: 3000
+                            delay: 500
                         },
                         slidesPerView: 1,
                     })
@@ -418,11 +418,7 @@
             }
         }
         .min-icon-box {
-            width: 2.74rem;
-            margin: 0 auto;
-            .min-icon {
-                width: 100%;
-            }
+            display: none;
         }
         .nav {
             width: 1200px;

@@ -13,8 +13,8 @@
                         <div class="rank">Rank：<span :class="saleData.rank === 'N' ? 'n' : saleData.rank === 'R' ? 'r' : saleData.rank === 'SR' ? 'sr' : saleData.rank === 'SSR' ? 'ssr' : ''">{{ saleData.rank }}</span></div>
                     </div>
                     <div class="btn-box">
-                        <div>For sale</div>
-                        <div>BUY</div>
+                        <div @click="openDialog">For sale</div>
+                        <div class="buy">BUY</div>
                     </div>
                     <div class="price-desc">
                         <div class="price">1.5 BNB <img src="../assets/myBox/b_an.png" alt=""></div>
@@ -43,10 +43,10 @@
                                 <span class="type">Last Price</span>
                                 <span class="last-price">1.5 BNB <img src="../assets/myBox/b_an.png" alt=""></span>
                             </div>
-                            <div>
+                            <!-- <div>
                                 <span class="type">Transfers</span>
                                 <span class="transfers">1</span>
-                            </div>
+                            </div> -->
                             <div>
                                 <span class="type">Sale Status</span>
                                 <span class="sale-status">For sale</span>
@@ -61,12 +61,40 @@
             </div>
         </div>
         <Footer />
+
+        <div class="dialog-box">
+            <el-dialog
+                v-model="dialog"
+                title="List for sell"
+                :show-close="false"
+                :before-close="handleClose"
+            >
+                <div>
+                    <div class="text">Price</div>
+                    <input v-model="priceVal" type="text">
+                    <div class="text-in">Now, you will list your MAX.</div>
+                    <div class="bnb">
+                        <span>You Get</span>
+                        <span class="bnb-price">1.5 BNB</span>
+                    </div>
+                </div>
+                <template #footer>
+                <span class="dialog-footer">
+                    <el-button type="primary" @click="handleClose"
+                    >Post your Listing</el-button
+                    >
+                </span>
+                </template>
+            </el-dialog>
+        </div>
     </div>
 </template>
 
 <script>
     import Header from '../components/Header.vue'
     import Footer from '../components/Footer.vue'
+    import { defineComponent, ref } from 'vue'
+    import { ElMessageBox } from 'element-plus'
     export default {
         name: 'saleDetail',
         components: { Header, Footer },
@@ -86,12 +114,23 @@
                     { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 }
                 ],
 
-                saleData: {}
+                saleData: {},
+
+                dialog: false,
+                priceVal: ''
             }
         },
         methods: {
             back() {
-                this.$router.push('/ShowAll')
+                this.$router.push('/placeShowall')
+            },
+
+            openDialog() {
+                this.dialog = true
+            },
+            handleClose() {
+                this.priceVal = ''
+                this.dialog = false
             }
         },
         created () {
@@ -193,6 +232,9 @@
                         text-align: center;
                         cursor: pointer;
                     }
+                    .buy {
+                        background-color: #DCDCDC;
+                    }
                 }
                 .price-desc {
                     width: 656px;
@@ -253,8 +295,8 @@
                     }
                     .hiy-info {
                         width: 638px;
-                        height: 221px;
-                        padding: 15px 0 0 22px;
+                        height: auto;
+                        padding: 15px 0 15px 22px;
                         background: rgba(0, 0, 0, 0.5);
                         font-size: 12px;
                         .type {
@@ -296,6 +338,78 @@
                     }
                 }
             }
+        }
+    }
+
+    .dialog-box /deep/ .el-dialog {
+        background-color: #232323;
+        width: 25% !important;
+    }
+    .dialog-box {
+        .text {
+            font-size: 14px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #C1C1C1;
+            line-height: 20px;
+        }
+        .text-in {
+            margin-bottom: 30px;
+            font-size: 12px;
+            font-family: PingFangSC-Regular, PingFang SC;
+            font-weight: 400;
+            color: #5D7578;
+            line-height: 20px;
+        }
+        input {
+            width: 100%;
+            height: 36px;
+            border-radius: 6px;
+            text-indent: 10px;
+            font-size: 16px;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+            line-height: 20px;
+        }
+        .bnb {
+            border-top: 1px solid #353535;
+            border-bottom: 1px solid #353535;
+            background-color: #232323;
+            font-size: 12px;
+            font-family: PingFangSC-Semibold, PingFang SC;
+            font-weight: 600;
+            color: #5D7578;
+            line-height: 36px;
+            padding: 6px 0;
+            display: flex;
+            justify-content: space-between;
+            .bnb-price {
+                color: #FFB800;
+            }
+        }
+    }
+    .dialog-box /deep/ .el-dialog__header {
+        font-size: 16px;
+        font-family: SFPro-Bold, SFPro;
+        font-weight: bold;
+        line-height: 19px;
+        .el-dialog__title {
+            color: #C1C1C1;
+        }
+    }
+    .dialog-box /deep/ .el-dialog__footer {
+        text-align: center;
+        .el-button {
+            width: 211px;
+            height: 36px;
+            background: #06FEFE;
+            border-radius: 18px;
+            border: none;
+            font-size: 14px;
+            font-family: SFPro-Bold, SFPro;
+            font-weight: bold;
+            color: #000000;
+            line-height: 16px;
         }
     }
     
@@ -454,6 +568,11 @@
                     }
                 }
             }
+        }
+
+        .dialog-box /deep/ .el-dialog {
+            background-color: #232323;
+            width: 90% !important;
         }
     }
 }

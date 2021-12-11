@@ -19,6 +19,16 @@ const router = createRouter({
             path: '/Coming',
             name: 'Coming',
             component: () => import('./view/Coming-Soon.vue')
+        },
+        {
+            path: '/placeShowall',
+            name: 'placeShowall',
+            component: () => import('./view/place-showall.vue')
+        },
+        {
+            path: '/saleDetail',
+            name: 'saleDetail',
+            component: () => import('./view/sale-detail.vue')
         }
     ]
 })

@@ -112,6 +112,7 @@ export default {
               this.$router.push('/MysteryBoxes')
           }else if(i==6){
               this.$router.push('/Coming')
+              // this.$router.push('/placeShowall')
           }else if(i==7){
               this.$router.push('/')
           }

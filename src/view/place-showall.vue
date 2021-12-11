@@ -1,5 +1,5 @@
 <template>
-    <div class="place">
+    <div class="place" @mousedown="mouseDown">
         <Header />
             <div class="search-item">
                 <div class="type-box">
@@ -33,44 +33,34 @@
                 <div class="filter"><img src="../assets/myBox/place_icon.png" alt=""> Filter</div>
                 <div class="select-input">
                     <div class="pt-re">
-                        <input v-model="priceVal" class="select" type="text" @click="openValue('priceShow')" @blur="priceShow = false">
+                        <input v-model="priceVal" class="select" type="text" @click="openValue('priceShow')" @blur="">
                         <div v-show="priceShow" class="list">
-                            <ul>
-                                <li>Highest price</li>
-                                <li>Lowest price</li>
+                            <ul ref="filter">
+                                <li v-for="(li, index) in priceList" :key="li" @click="changePrice(index)">{{ li }}</li>
                             </ul>
                         </div>
                     </div>
                     <div class="pt-re">
-                        <input v-model="editionVal" class="select" type="text" @click="openValue('editionShow')" @blur="editionShow = false">
+                        <input v-model="editionVal" class="select" type="text" @click="openValue('editionShow')" @blur="">
                         <div v-show="editionShow" class="list">
-                            <ul>
-                                <li>Crazy MAX</li>
-                                <li>Mad MAx</li>
-                                <li>King MAX</li>
-                                <li>Mars MAx</li>
+                            <ul ref="filter">
+                                <li v-for="(li, index) in editionList" ref="" :key="li" @click="changeEdite(index)">{{ li }}</li>
                             </ul>
                         </div>
                     </div>
                     <div class="pt-re">
-                        <input v-model="rankVal" class="select" type="text" @click="openValue('rankShow')" @blur="rankShow = false">
+                        <input v-model="rankVal" class="select" type="text" @click="openValue('rankShow')" @blur="">
                         <div v-show="rankShow" class="list">
-                            <ul>
-                                <li>N</li>
-                                <li>R</li>
-                                <li>SR</li>
-                                <li>SSR</li>
+                            <ul ref="filter">
+                                <li v-for="(li, index) in rankList" ref="" :key="li" @click="changeRank(index)">{{ li }}</li>
                             </ul>
                         </div>
                     </div>
                     <div class="pt-re">
-                        <input v-model="bgVal" class="select" type="text" @click="openValue('bgShow')" @blur="bgShow = false">
+                        <input v-model="bgVal" class="select" type="text" @click="openValue('bgShow')" @blur="">
                         <div v-show="bgShow" class="list">
-                            <ul>
-                                <li>Farm</li>
-                                <li>Earth</li>
-                                <li>Moon</li>
-                                <li>Mar</li>
+                            <ul ref="filter">
+                                <li v-for="(li, index) in bgList" ref="" :key="li" @click="changebBg(index)">{{ li }}</li>
                             </ul>
                         </div>
                     </div>
@@ -129,6 +119,11 @@
                 rankVal: 'Rank',
                 bgVal: 'Backgound',
 
+                priceList: [ 'Highest price', 'Lowest price' ],
+                editionList: [ 'Crazy MAX', 'Mad MAx', 'King MAX', 'Mars MAx' ],
+                rankList: [ 'N', 'R', 'SR', 'SSR' ],
+                bgList: [ 'Farm', 'Earth', 'Moon', 'Mar' ],
+
                 saleList: [
                     { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
                     { max: '23', rank: 'N', price: 2.18, lastPrice: 2.18 },
@@ -154,11 +149,60 @@
                     return picture[`../../assets/img/other/${name}.png`].default // 返回图片绝对路径
                 }
             },
-            openValue(type){
+            openValue(type) {
                 this[type] = true;
             },
+            changePrice(index) {
+                this.priceVal = this.priceList[index]
+                this.priceShow = false
+            },
+            changeEdite(index) {
+                this.editionVal = this.editionList[index]
+                this.editionShow = false
+            },
+            changeRank(index) {
+                this.rankVal = this.rankList[index]
+                this.rankShow = false
+            },
+            changebBg(index) {
+                this.bgVal = this.bgList[index]
+                this.bgShow = false
+            },
+            mouseDown(e) {
+                if (this.$refs.filter && e.target.contains(this.$refs.filter)) {
+                    this.priceShow = false
+                    this.editionShow = false
+                    this.rankShow = false
+                    this.bgShow = false
+                }
+            },
+    
             changeNav(nav) {
                 this.navFor = nav
+                if (nav === 1) {
+                    this.saleList = [
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'N', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'SR', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'SSR', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 }
+                    ]
+                } else {
+                    this.saleList = [
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'N', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'SR', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'SSR', price: 2.18, lastPrice: 2.18 },
+                        { max: '23', rank: 'R', price: 2.18, lastPrice: 2.18 }
+                    ]
+                }
+
             },
             toDetails(index) {
                 this.$router.push({ path: '/saleDetail', query: { index }})
@@ -186,6 +230,7 @@
         border: 4px solid rgba(151, 151, 151, 0.25);
         .type-box {
             display: flex;
+            text-align: center;
         }
         .type-num {
             width: 110px;
@@ -240,6 +285,7 @@
         line-height: 34px;
         .sales {
             margin: 20px 0 16px;
+            text-align: center;
             color: #06FEFE;
         }
         .nav-box {
@@ -397,6 +443,7 @@
                 line-height: 28px;
                 color: #000000;
                 cursor: pointer;
+                text-align: center;
             }
             .price {
                 width: 100%;
@@ -417,9 +464,11 @@
         margin: 0px auto 50px;
     }
     .page /deep/ .el-pagination {
+        text-align: center;
         background: #000000;
         border-radius: 22px;
         border: 1px solid rgba(6, 254, 254, 0.45);
+        padding: 0 12px;
         &.btn-prev {
             background: #000000;
         }
